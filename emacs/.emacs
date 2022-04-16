@@ -54,7 +54,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Cascadia Mono" :foundry "SAJA" :slant normal :weight semi-bold :height 113 :width normal)))))
+ '(default ((t (:family "Cascadia Code" :foundry "SAJA" :slant normal :weight normal :height 120 :width normal)))))
 
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
   backup-by-copying t    ; Don't delink hardlinks
@@ -83,4 +83,7 @@
 
 ;; Remove annoying message
 (setq sml/no-confirm-load-theme t)
+
+;; Bind F9 to toggle menu-bar-mode
+(global-set-key [f9] 'toggle-menu-bar-mode-from-frame)
 
