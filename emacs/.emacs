@@ -91,9 +91,16 @@
 ;; Install packages
 (use-package modus-themes)
 (use-package go-mode)
+(use-package powerline)
+
+;; Powerline configuration
+(powerline-default-theme)
 
 ;; Remove annoying message
 (setq sml/no-confirm-load-theme t)
 
 ;; Bind F9 to toggle menu-bar-mode
 (global-set-key [f9] 'toggle-menu-bar-mode-from-frame)
+
+;; Change cursor type
+(setq-default cursor-type 'bar) 
