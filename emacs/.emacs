@@ -64,10 +64,10 @@
   kept-old-versions 5    ; and how many of the old
   )
 
-;;customize theme
+;; Customize the theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (add-to-list 'load-path "~/.emacs.d/themes/")
-(load-theme 'doom-badger t)
+(load-theme 'modus-vivendi t)
 
 ;; set GUI options
 (tool-bar-mode -1)
@@ -75,15 +75,25 @@
 (setq line-number-mode t)
 (set-fringe-mode 0)
 
-;; MELPA/ELPA stuff
+;; Package configuration
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t)
+
+;; Install packages
+(use-package modus-themes)
+(use-package go-mode)
 
 ;; Remove annoying message
 (setq sml/no-confirm-load-theme t)
 
 ;; Bind F9 to toggle menu-bar-mode
 (global-set-key [f9] 'toggle-menu-bar-mode-from-frame)
-
