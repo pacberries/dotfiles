@@ -64,17 +64,6 @@
   kept-old-versions 5    ; and how many of the old
   )
 
-;; Customize the theme
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(add-to-list 'load-path "~/.emacs.d/themes/")
-(load-theme 'modus-vivendi t)
-
-;; set GUI options
-(tool-bar-mode -1)
-(menu-bar-mode -1)
-(setq line-number-mode t)
-(set-fringe-mode 0)
-
 ;; Package configuration
 (require 'package)
 (add-to-list 'package-archives
@@ -91,10 +80,17 @@
 ;; Install packages
 (use-package modus-themes)
 (use-package go-mode)
-(use-package powerline)
 
-;; Powerline configuration
-(powerline-default-theme)
+;; Customize the theme
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(add-to-list 'load-path "~/.emacs.d/themes/")
+(load-theme 'modus-vivendi t)
+
+;; set GUI options
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(setq line-number-mode t)
+(set-fringe-mode 0)
 
 ;; Remove annoying message
 (setq sml/no-confirm-load-theme t)
