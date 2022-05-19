@@ -100,3 +100,11 @@
 
 ;; Change cursor type
 (setq-default cursor-type 'bar) 
+
+;; Zoom in and out with CTRL+/-
+(global-set-key (kbd "C-=") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+(global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
+(global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
+
+
