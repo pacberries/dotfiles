@@ -1,0 +1,8 @@
+configuration
+{
+ modi: "drun";
+ font: "Input Mono Narrow Regular  12.7";
+ combi-modi: "drun";
+}
+ 
+@theme "~/.config/rofi/jbeans.rasi"
