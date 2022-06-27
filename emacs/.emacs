@@ -84,7 +84,7 @@
 ;; Customize the theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (add-to-list 'load-path "~/.emacs.d/themes/")
-(load-theme 'doom-spacegrey t)
+(load-theme 'doom-one t)
 
 ;; set GUI options
 (tool-bar-mode -1)
