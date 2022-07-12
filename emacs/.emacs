@@ -54,7 +54,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Input" :foundry "FBI " :slant normal :weight normal :height 128 :width extra-condensed)))))
+ '(default ((t (:family "Cousine" :foundry "MONO" :slant normal :weight normal :height 90 :width normal)))))
 
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
   backup-by-copying t    ; Don't delink hardlinks
