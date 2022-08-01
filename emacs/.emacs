@@ -54,7 +54,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Source Code Pro" :foundry "ADBO" :slant normal :weight normal :height 128 :width normal)))))
+ '(default ((t (:family "Hack" :foundry "SRC" :slant normal :weight normal :height 120 :width normal)))))
 
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
   backup-by-copying t    ; Don't delink hardlinks
@@ -78,13 +78,13 @@
 (setq use-package-always-ensure t)
 
 ;; Install packages
-(use-package solarized-theme)
+(use-package zenburn-theme)
 (use-package go-mode)
 
 ;; Customize the theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (add-to-list 'load-path "~/.emacs.d/themes/")
-(load-theme 'solarized-dark-high-contrast t)
+(load-theme 'zenburn t)
 
 ;; set GUI options
 (tool-bar-mode -1)
