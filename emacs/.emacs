@@ -18,14 +18,12 @@
  '(jdee-db-active-breakpoint-face-colors (cons "#10151a" "#e74c3c"))
  '(jdee-db-requested-breakpoint-face-colors (cons "#10151a" "#53df83"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#10151a" "#737c8c"))
- '(menu-bar-mode nil)
  '(objed-cursor-color "#e74c3c")
  '(package-selected-packages
    '(doom-themes autothemer go-mode solarized-theme base16-theme))
  '(pdf-view-midnight-colors (cons "#f8f8f0" "#21272e"))
  '(rustic-ansi-faces
    ["#21272e" "#e74c3c" "#53df83" "#ECBE7B" "#56b5c2" "#FFB8D1" "#56b6c2" "#f8f8f0"])
- '(show-paren-mode t)
  '(tool-bar-mode nil)
  '(vc-annotate-background "#21272e")
  '(vc-annotate-color-map
@@ -54,7 +52,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Hack" :foundry "SRC" :slant normal :weight normal :height 120 :width normal)))))
+ '(default ((t (:family "SF Mono" :foundry "APPL" :slant normal :weight normal :height 113 :width normal)))))
 
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
   backup-by-copying t    ; Don't delink hardlinks
@@ -84,11 +82,12 @@
 ;; Customize the theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (add-to-list 'load-path "~/.emacs.d/themes/")
-(load-theme 'gruvbox-dark-hard t)
+(load-theme 'gruvbox-dark-medium t)
 
 ;; set GUI options
 (tool-bar-mode -1)
 (menu-bar-mode -1)
+(scroll-bar-mode -1)
 (setq line-number-mode t)
 (set-fringe-mode 0)
 
@@ -98,13 +97,8 @@
 ;; Bind F9 to toggle menu-bar-mode
 (global-set-key [f9] 'toggle-menu-bar-mode-from-frame)
 
-;; Change cursor type
-(setq-default cursor-type 'bar) 
-
 ;; Zoom in and out with CTRL+/-
 (global-set-key (kbd "C-=") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 (global-set-key (kbd "<C-wheel-up>") 'text-scale-increase)
 (global-set-key (kbd "<C-wheel-down>") 'text-scale-decrease)
-
-
