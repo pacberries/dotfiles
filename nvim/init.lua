@@ -93,6 +93,12 @@ vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
 require("catppuccin").setup()
 vim.cmd [[colorscheme catppuccin]]
 
+-- Unbind arrow keys
+vim.api.nvim_set_keymap('n', '<Left>', '<Nop>', {expr = true, noremap = true})
+vim.api.nvim_set_keymap('n', '<Right>', '<Nop>', {expr = true, noremap = true})
+vim.api.nvim_set_keymap('n', '<Up>', '<Nop>', {expr = true, noremap = true})
+vim.api.nvim_set_keymap('n', '<Down>', '<Nop>', {expr = true, noremap = true})
+
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
