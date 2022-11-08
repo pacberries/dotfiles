@@ -1,0 +1,39 @@
+2. To use PulseAudio's daemon for sound, users should disable USE=sound-server
+  for PipeWire, enable USE=daemon on media-sound/pulseaudio, and add
+  media-sound/pulseaudio-daemon to their world file:
+
+  Place the following entries in /etc/portage/package.use:
+  ```
+  media-video/pipewire -sound-server
+  media-sound/pulseaudio daemon
+  ```
+
+  Add media-sound/pulseaudio-daemon to @world:
+  # emerge --noreplace media-sound/pulseaudio-daemon
+
+  Then perform a world upgrade:
+  # emerge --ask --update --changed-use --deep @world
+
+  Then depclean:
+  # emerge --ask --depclean
+
+  OpenRC users on an XDG-compliant desktop which respects autostart files
+  will not need to take any further action.
+
+  OpenRC users using a minimal desktop which does not respect autostart
+  files should consider adding `gentoo-pipewire-launcher &` in e.g.
+  `~/.xprofile` but it's not strictly required in terms of audio
+  handling. It may be required in future for the non-audio usecases
+  described above.
+
+  systemd users will also need to run the following commands:
+  $ systemctl --user --now enable pulseaudio.service pulseaudio.socket
+  $ systemctl --user --now disable pipewire.socket pipewire-pulse.socket
+
+  Alternatively, systemd users can run the following commands as root to change
+  the default for all users:
+  # systemctl --global enable pulseaudio.service pulseaudio.socket
+  # systemctl --global --force disable pipewire.socket pipewire-pulse.socket
+
+  (If taking this option, the services must be started manually as a one-off as
+  a user.)
