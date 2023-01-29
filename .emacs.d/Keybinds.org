@@ -1,0 +1,32 @@
+#+TITLE: Keybinds
+* Basic Keybinds
+** UNDO/COPY/PASTE
+ Undo: C-z
+ Redo: C-o
+ Paste: C-y
+ Copy: M-w
+ Cut: C-w
+ SelectAll: C-x h
+ Go to Beginning of Line: C-a
+ Delete Line: C-k
+ Indent Region: C-x TAB
+** Window Management
+ C-x 1: Delete Other Windows
+ C-x 2: Vertical Split
+ C-x 3: Horizontal Split
+ C-x 0: Kill Window
+** Buffer Management
+ C-x k: Kill Buffer
+ C-x b: Switch Buffer
+ C-x C-b: Kill all Buffers
+** Misc
+ C-u 30 down: Go down X amount of Lines
+ C-x-f: Open File/Folder
+ C-x-s: Save File
+ C-x-C-n: Open Sidebar
+ M-t: Open Terminal
+ C-x t t: Switch Dir ( Side Bar )
+ M-0: Focus Sidebar
+ C-x g: Open Git stuff
+ C-x C-u: Open file as Root
+ C-x C-o: Edit as Root
