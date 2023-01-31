@@ -1,5 +1,6 @@
 
 
+
 #+TITLE: Bruna's Emacs Config
 #+AUTHOR: pacbru
 
@@ -31,7 +32,7 @@
     ;; Global settings (defaults)
     (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
 	  doom-themes-enable-italic t) ; if nil, italics is universally disabled
-    (load-theme 'doom-vibrant t)
+    (load-theme 'doom-gruvbox t)
 
     ;; Enable flashing mode-line on errors
     (doom-themes-visual-bell-config)
@@ -48,7 +49,6 @@
 
   (dolist (mode '(org-mode-hook
 		  term-mode-hook
-		  vterm-mode-hook
 		  shell-mode-hook
 		  eshell-mode-hook
 		  treemacs-mode-hook
@@ -62,31 +62,40 @@
 
 ** Custom Keybinds
 #+begin_src emacs-lisp
-  (global-set-key "\C-cd" 'kill-whole-line)
-  (defun kill-other-buffers ()
-    "Kill all other buffers."
-    (interactive)
-    (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
-  (global-set-key (kbd "C-x C-b") 'kill-other-buffers)
-  (global-set-key (kbd "C-z") 'undo-tree-undo)
-  (global-set-key (kbd "C-o") 'undo-tree-redo)
-  (defun reload-dotemacs ()
-    (interactive)
-    (load-file "~/.emacs.d/init.el"))
-  (global-set-key (kbd "C-x e") 'reload-dotemacs)
+      (global-set-key "\C-cd" 'kill-whole-line)
+      (defun kill-other-buffers ()
+	"Kill all other buffers."
+	(interactive)
+	(mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
+      (global-set-key (kbd "C-x C-b") 'kill-other-buffers)
+      (global-set-key (kbd "C-z") 'undo-tree-undo)
+      (global-set-key (kbd "C-o") 'undo-tree-redo)
+      (defun reload-dotemacs ()
+	(interactive)
+	(load-file "~/.emacs.d/init.el"))
+      (global-set-key (kbd "C-x e") 'reload-dotemacs)
+
+  (use-package all-the-icons)
+  (when (display-graphic-p)
+  (require 'all-the-icons))
+;; or
+(use-package all-the-icons
+  :if (display-graphic-p))
+
 #+end_src
 ** MISC
 #+begin_src emacs-lisp
-  (use-package vterm
-    :ensure t)
   (use-package dashboard
   :ensure t
   :config
   (dashboard-setup-startup-hook)
   (setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")))
-  (setq dashboard-banner-logo-title "Bruna, Welcome Back.")
+  (setq dashboard-banner-logo-title "Bem-vinda, Bruna!")
   (setq dashboard-startup-banner 3)
   (setq dashboard-center-content t))
+  (image-type-available-p 'png)
+  (image-type-available-p 'jpg)
+  (setq dashboard-startup-banner "~/.emacs.d/touhou/marisa.png"):
 #+end_src
 
 * Setup Intelisense
