@@ -9,7 +9,7 @@
  '(global-display-line-numbers-mode t)
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(dashboard centaur-tabs rainbow-mode vterm undo-tree doom-modeline shell-pop apheleia aggressive-indent svelte-mode yaml-mode ## treemacs-tab-bar treemacs-persp treemacs-magit treemacs-icons-dired treemacs-projectile treemacs doom-themes company))
+   '(vterm-toggle all-the-icons dashboard centaur-tabs rainbow-mode undo-tree doom-modeline shell-pop apheleia aggressive-indent svelte-mode yaml-mode ## treemacs-tab-bar treemacs-persp treemacs-magit treemacs-icons-dired treemacs-projectile treemacs doom-themes company))
  '(tool-bar-mode nil)
  '(warning-suppress-log-types '((comp) (comp)))
  '(warning-suppress-types '((lsp-mode) (comp))))
@@ -18,12 +18,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Hack Nerd Font" :foundry "SRC" :slant normal :weight normal :height 120 :width normal)))))
+ '(default ((t (:family "Iosevka" :foundry "SRC" :slant normal :weight normal :height 120 :width normal)))))
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-(add-to-list 'default-frame-alist '(font . "Hack Nerd Font" ))
-(set-face-attribute 'default t :font "Hack Nerd Font" )
+(add-to-list 'default-frame-alist '(font . "Iosevka" ))
+(set-face-attribute 'default t :font "Iosevka" )
 
 (org-babel-load-file
  (expand-file-name
