@@ -32,7 +32,6 @@
 
  (dolist (mode '(org-mode-hook
 		 term-mode-hook
-		 vterm-mode-hook
 		 shell-mode-hook
 		 eshell-mode-hook
 		 treemacs-mode-hook
@@ -40,28 +39,36 @@
    (add-hook mode(lambda() (display-line-numbers-mode 0))))
 
 (global-set-key "\C-cd" 'kill-whole-line)
-(defun kill-other-buffers ()
-  "Kill all other buffers."
-  (interactive)
-  (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
-(global-set-key (kbd "C-x C-b") 'kill-other-buffers)
-(global-set-key (kbd "C-z") 'undo-tree-undo)
-(global-set-key (kbd "C-o") 'undo-tree-redo)
-(defun reload-dotemacs ()
-  (interactive)
-  (load-file "~/.emacs.d/init.el"))
-(global-set-key (kbd "C-x e") 'reload-dotemacs)
+      (defun kill-other-buffers ()
+	"Kill all other buffers."
+	(interactive)
+	(mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
+      (global-set-key (kbd "C-x C-b") 'kill-other-buffers)
+      (global-set-key (kbd "C-z") 'undo-tree-undo)
+      (global-set-key (kbd "C-o") 'undo-tree-redo)
+      (defun reload-dotemacs ()
+	(interactive)
+	(load-file "~/.emacs.d/init.el"))
+      (global-set-key (kbd "C-x e") 'reload-dotemacs)
 
-(use-package vterm
-  :ensure t)
+  (use-package all-the-icons)
+  (when (display-graphic-p)
+  (require 'all-the-icons))
+;; or
+(use-package all-the-icons
+  :if (display-graphic-p))
+
 (use-package dashboard
 :ensure t
 :config
 (dashboard-setup-startup-hook)
 (setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")))
-(setq dashboard-banner-logo-title "Bruna, Welcome Back.")
+(setq dashboard-banner-logo-title "Bem-vinda, Bruna!")
 (setq dashboard-startup-banner 3)
 (setq dashboard-center-content t))
+(image-type-available-p 'png)
+(image-type-available-p 'jpg)
+(setq dashboard-startup-banner "~/.emacs.d/touhou/marisa.png"):
 
 (setq read-process-output-max (* 1024 1024)) ;; 1mb
 (setq gc-cons-threshold 100000000)
