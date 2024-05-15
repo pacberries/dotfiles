@@ -1,8 +1,8 @@
 
 
 
-#+TITLE: Bruna's Emacs Config
-#+AUTHOR: pacbru
+#+TITLE: Felipe's Emacs Config
+#+AUTHOR: pacberries
 
 * Package Management
 ** Setup Repos
@@ -90,7 +90,7 @@
   :config
   (dashboard-setup-startup-hook)
   (setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")))
-  (setq dashboard-banner-logo-title "Bem-vinda, Bruna!")
+  (setq dashboard-banner-logo-title "Bem-vindo, Felipe!")
   (setq dashboard-startup-banner 3)
   (setq dashboard-center-content t))
   (image-type-available-p 'png)
